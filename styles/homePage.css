@@ -1,0 +1,25 @@
+.homePage .hero1{
+  width: 100%;
+  height: 100%;
+  }
+  .homePage .hero1Grid{
+  width: 100%;
+  height: 98%;
+  }
+  
+  
+  .homePage .profilePicBorder{
+    position: relative;
+    border-radius: 25% 75% 25% 75% / 75% 25% 75% 25%;
+    background-color: orangered;
+    width: 350px;
+    height: 350px;
+  }
+  .homePage .profilePic{
+    position: absolute;
+    top: 12px;
+    left: 9px;
+    border-radius: 25% 75% 25% 75% / 75% 25% 75% 25%;
+    width: 95%;
+    height: auto;
+  }
