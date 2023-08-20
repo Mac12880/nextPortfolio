@@ -24,7 +24,25 @@ export default function Home() {
           <div className="right">
             <div className="rightContent">
               <div className="rchero1">
-                <b className="text-white">leftDown</b>
+                <div className="rchero1left">
+                  <img
+                    className="profilePic"
+                    src="mjuanpic.png"
+                    alt="Profile pic"
+                  />
+                </div>
+                <div className="rchero1right">
+                  <b className="hero1Header">Web Developer</b>
+                  <b className="hero1SubHeader">Marc Augustine R. Juan</b>
+                  <p className="hero1Paragraph">
+                    Looking for an internship opportunity in software
+                    development as a front-end web developer or full-stack
+                    developer, where I can apply my theoretical knowledge to
+                    real-world projects, enhance my technical skills, and gain
+                    valuable experience working in a collaborative team
+                    environment
+                  </p>
+                </div>
               </div>
               <div className="rchero2">
                 <b className="text-white">leftDown</b>

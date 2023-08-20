@@ -24,36 +24,82 @@ padding: 10px 10px 10px 0;
 }
 .rightContent{
 background-color: #777777;
-border-radius: 15px;
+border-radius: 10px;
 height: 100%;
 overflow-y: scroll;
+overflow-x: hidden;
 white-space: nowrap;
 }
 .rchero1{
   width: 100%;
   height: auto;
-  height: 1000px;
   background-color: #777777;
-  border-radius: 15px;
+  border-radius: 10px;
+  display: flex;
 }
+.rchero1left{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rchero1right{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.hero1Header{
+  width: 100%;
+  height: auto;
+  color: #ffffff;
+  font-size: 2vw;
+  text-align: left;
+  /* padding-top: 200px; */
+  padding-top: 8vh;
+}
+.hero1SubHeader{
+  width: 100%;
+  height: auto;
+  color: #ffffff;
+  font-size: 5vw;
+  text-align: left;
+}
+.hero1Paragraph{
+  width: 100%;
+  color: #ffffff;
+  /* font-size: 20px; */
+  font-size: 1.3vw;
+  text-align: justify;
+  white-space:pre-wrap;
+  padding-right: 10px;
+}
+.right .profilePic{
+  width: 90%;
+  height: auto;
+  margin: 15px;
+}
+
 .rchero2{
   width: 100%;
   height: auto;
   height: 1000px;
   background: rgb(0,0,0);
-  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(18,18,18,0.66) 2%, rgba(18,18,18,0.83) 24%, rgba(18,18,18,0.92) 45%, rgba(18,18,18,1) 65%, rgba(18,18,18,1) 100%);
+background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(18,18,18,0.7) 3%, rgba(18,18,18,0.8) 13%, rgba(18,18,18,0.9) 34%, rgba(18,18,18,1) 46%, rgba(18,18,18,1) 100%);  
 }
 .leftUp{
   background-color: #121212;
   width: auto;
   height: 10%;
   margin-bottom: 10px;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 .leftDown{
   width: auto;
   /* height: 90%; */
   height: auto;
   background-color: #121212;
-  border-radius: 15px;
+  border-radius: 10px;
 }
