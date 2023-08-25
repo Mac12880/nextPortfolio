@@ -1,5 +1,45 @@
 import Head from "next/head";
 import Image from "next/image";
+import {
+  GoHome,
+  GoHomeFill,
+  GoPerson,
+  GoPersonFill,
+  GoFileDirectory,
+  GoFileDirectoryFill,
+  GoMail,
+} from "react-icons/go";
+
+const content = [
+  {
+    title: "Home",
+    link: "/",
+    icon: <GoHome />,
+    iconActive: <GoHomeFill />,
+  },
+  {
+    title: "About Me",
+    link: "/",
+    icon: <GoPerson />,
+    iconActive: <GoPersonFill />,
+  },
+  {
+    title: "Projects",
+    link: "/",
+    icon: <GoFileDirectory />,
+    iconActive: <GoFileDirectoryFill />,
+  },
+  {
+    title: "Contacts",
+    link: "/",
+    icon: <GoMail />,
+    iconActive: <GoMail />,
+  },
+];
+
+const MenuItem = ({ title, link, icon }) => {
+  return <div className="sidebarIcons">{icon}</div>;
+};
 
 export default function Home() {
   return (
@@ -14,15 +54,25 @@ export default function Home() {
         <div className="hero1">
           {/* <b>Test</b> */}
           <div className="left">
-            <div className="leftUp">
-              <b className="text-white">leftUp</b>
-            </div>
-            <div className="leftDown">
-              <b className="text-white">leftDown</b>
+            <div className="leftContainer">
+              {/* <div className="sidebarIcons">
+                <GoHome />
+              </div> */}
+              {content.map((item) => {
+                return <MenuItem {...item} key={item.id}></MenuItem>;
+              })}
             </div>
           </div>
-          <div className="right">
+          <div className="right dark">
             <div className="rightContent">
+              <div className="rcHeader">
+                <div className="rcHeaderIcon">
+                  <GoHome />
+                </div>
+                <div className="rcHeaderButton">
+                  <p>Resume</p>
+                </div>
+              </div>
               <div className="rchero1">
                 <div className="rchero1left">
                   <img

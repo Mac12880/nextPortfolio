@@ -1,3 +1,6 @@
+.dark{
+  color-scheme: dark;
+}
 .indexBg{
 background-color: #000000;
 }
@@ -14,21 +17,59 @@ height: 15vh;
   flex-direction: row;
 }
 .left{
-  width: 10%;
-  padding: 10px;
+  /* width: 10%; */
+  width: 5%;
+  /* padding: 10px; */
+  padding: 0.7vw;
 }
 .right{
 height: 100%;
-width: 90%;
-padding: 10px 10px 10px 0;
+/* width: 90%; */
+width: 95%;
+/* padding: 10px 10px 10px 0; */
+padding: 0.7vw 0.7vw 0.7vw 0;
 }
 .rightContent{
 background-color: #777777;
-border-radius: 10px;
+/* border-radius: 10px; */
+border-radius: 1vw;
 height: 100%;
 overflow-y: scroll;
 overflow-x: hidden;
 white-space: nowrap;
+}
+
+.rcHeader{
+  width: 100%;
+  background-color: #777777;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5vw;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+.rcHeaderIcon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 2vw;
+  color: white;
+  font-size: 2vw;
+  padding: 0.5vw 1vw;
+  cursor: pointer;
+}
+.rcHeaderButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 2vw;
+  color: white;
+  font-size: 1.5vw;
+  padding: 0.5vw 1vw;
+  cursor: pointer;
 }
 .rchero1{
   width: 100%;
@@ -89,17 +130,23 @@ white-space: nowrap;
   background: rgb(0,0,0);
 background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(18,18,18,0.7) 3%, rgba(18,18,18,0.8) 13%, rgba(18,18,18,0.9) 34%, rgba(18,18,18,1) 46%, rgba(18,18,18,1) 100%);  
 }
-.leftUp{
+.leftContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #121212;
   width: auto;
-  height: 10%;
+  height: 100%;
+
   margin-bottom: 10px;
-  border-radius: 10px;
+  border-radius: 1vw;
 }
-.leftDown{
-  width: auto;
-  /* height: 90%; */
-  height: auto;
-  background-color: #121212;
-  border-radius: 10px;
+
+.sidebarIcons{
+  color: white;
+  font-size: 2vw;
+  margin-top: 0.7vw;
+  padding-top: 0.7vw;
+  padding-bottom: 0.7vw;
+  cursor: pointer;
 }
