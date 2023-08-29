@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import {
   GoHome,
   GoHomeFill,
@@ -12,35 +13,131 @@ import {
 
 const content = [
   {
+    id: 1,
     title: "Home",
     link: "/",
     icon: <GoHome />,
     iconActive: <GoHomeFill />,
   },
   {
+    id: 2,
     title: "About Me",
-    link: "/",
+    link: "/about.me",
     icon: <GoPerson />,
     iconActive: <GoPersonFill />,
   },
   {
+    id: 3,
     title: "Projects",
-    link: "/",
+    link: "/projects",
     icon: <GoFileDirectory />,
     iconActive: <GoFileDirectoryFill />,
   },
   {
+    id: 4,
     title: "Contacts",
-    link: "/",
+    link: "/contacts",
     icon: <GoMail />,
     iconActive: <GoMail />,
   },
 ];
 
 const MenuItem = ({ title, link, icon }) => {
-  return <div className="sidebarIcons">{icon}</div>;
+  return (
+    <Link href={link}>
+      <div className="sidebarIcons">{icon}</div>
+    </Link>
+  );
 };
 
+const skills = [
+  {
+    id: 1,
+    title: "HTML",
+    percentage: 95,
+  },
+  {
+    id: 2,
+    title: "CSS",
+    percentage: 95,
+  },
+  {
+    id: 3,
+    title: "JavaScript",
+    percentage: 80,
+  },
+  {
+    id: 4,
+    title: "React.js",
+    percentage: 80,
+  },
+  {
+    id: 5,
+    title: "Node.js",
+    percentage: 50,
+  },
+  {
+    id: 6,
+    title: "Next.js",
+    percentage: 90,
+  },
+  {
+    id: 7,
+    title: "UI Design",
+    percentage: 80,
+  },
+  {
+    id: 8,
+    title: "Figma",
+    percentage: 90,
+  },
+];
+
+const SkillsItem = ({ title, percentage }) => {
+  return (
+    <div
+      className="flex justify-center flex-row"
+      style={{
+        backgroundColor: "#999999",
+        width: "80%",
+        height: "auto",
+        marginTop: "5px",
+        borderRadius: "1vw",
+      }}
+    >
+      <div
+        className="flex justify-center "
+        style={{
+          width: "20%",
+          background: "orange",
+          borderRadius: "1vw 0 0 1vw",
+        }}
+      >
+        <p className="" style={{ fontSize: "3vw" }}>
+          {title}
+        </p>
+      </div>
+      <div className="" style={{ width: "70%" }}>
+        <div
+          className=""
+          style={{ backgroundColor: "yellow", width: `${percentage}%` }}
+        >
+          <p
+            className=""
+            style={{ color: "yellow", fontSize: "3vw", textAlign: "left" }}
+          >
+            {percentage}%
+          </p>
+        </div>
+      </div>
+      <div className="flex justify-center" style={{ width: "10%" }}>
+        <p className="" style={{ fontSize: "3vw" }}>
+          {percentage}%
+        </p>
+      </div>
+    </div>
+  );
+};
 export default function Home() {
   return (
     <>
@@ -64,7 +161,7 @@ export default function Home() {
             </div>
           </div>
           <div className="right dark">
-            <div className="rightContent">
+            <div className="rightHeader">
               <div className="rcHeader">
                 <div className="rcHeaderIcon">
                   <GoHome />
@@ -73,6 +170,16 @@ export default function Home() {
                   <p>Resume</p>
                 </div>
               </div>
+            </div>
+            <div className="rightContent">
+              {/* <div className="rcHeader">
+                <div className="rcHeaderIcon">
+                  <GoHome />
+                </div>
+                <div className="rcHeaderButton">
+                  <p>Resume</p>
+                </div>
+              </div> */}
               <div className="rchero1">
                 <div className="rchero1left">
                   <img
@@ -95,7 +202,49 @@ export default function Home() {
                 </div>
               </div>
               <div className="rchero2">
-                <b className="text-white">leftDown</b>
+                <div className="flex justify-center" style={{ width: "100%" }}>
+                  <div
+                    className="flex justify-center"
+                    style={{ width: "9vw", borderBottom: "1px solid white" }}
+                  >
+                    <b className="text-white" style={{ fontSize: "3vw" }}>
+                      About
+                    </b>
+                  </div>
+                </div>
+
+                <div className="flex justify-center">
+                  <p className="rcHero2AboutMe text-white">
+                    Hi, I'm Marc. I am finished with my internship and starting
+                    on my freelance journey either front-end web developer or
+                    full-stack developer. I've done projects already using
+                    Nextjs and Reactjs, collaborated with talented people to
+                    create digital products for both business and consumer use.
+                    I am also confident with my skills and design, naturally
+                    curious, and always honing my technical and designing
+                    skills.
+                  </p>
+                </div>
+                <div className="flex justify-center" style={{ width: "100%" }}>
+                  <div
+                    className="flex justify-center"
+                    style={{ width: "9vw", borderBottom: "1px solid white" }}
+                  >
+                    <b className="text-white" style={{ fontSize: "3vw" }}>
+                      Skills
+                    </b>
+                  </div>
+                </div>
+                <div
+                  className="flex justify-center items-center flex-col"
+                  style={{
+                    marginTop: "10px",
+                  }}
+                >
+                  {skills.map((item) => {
+                    return <SkillsItem {...item} key={item.id}></SkillsItem>;
+                  })}
+                </div>
               </div>
             </div>
           </div>
