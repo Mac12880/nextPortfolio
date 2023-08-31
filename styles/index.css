@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 .dark{
   color-scheme: dark;
 }
@@ -81,7 +84,7 @@ padding: 0.7vw 0.7vw 0.7vw 0;
 }
 .rchero1{
   width: 100%;
-  height: auto;
+  height: 100%;
   background-color: #777777;
   /* border-radius: 10px; */
   display: flex;
@@ -96,8 +99,8 @@ padding: 0.7vw 0.7vw 0.7vw 0;
   width: 70%;
   height: 100%;
   display: flex;
-  justify-content: left;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 .hero1Header{
@@ -107,7 +110,7 @@ padding: 0.7vw 0.7vw 0.7vw 0;
   font-size: 2vw;
   text-align: left;
   /* padding-top: 200px; */
-  padding-top: 8vh;
+  /* padding-top: 8vh; */
 }
 .hero1SubHeader{
   width: 100%;
@@ -123,7 +126,8 @@ padding: 0.7vw 0.7vw 0.7vw 0;
   font-size: 1.3vw;
   text-align: justify;
   white-space:pre-wrap;
-  padding-right: 10px;
+  /* padding-right: 10px; */
+  padding-right: 1vw;
 }
 .right .profilePic{
   width: 90%;

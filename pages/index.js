@@ -15,28 +15,28 @@ const content = [
   {
     id: 1,
     title: "Home",
-    link: "/",
+    link: "home",
     icon: <GoHome />,
     iconActive: <GoHomeFill />,
   },
   {
     id: 2,
     title: "About Me",
-    link: "/about.me",
+    link: "about",
     icon: <GoPerson />,
     iconActive: <GoPersonFill />,
   },
   {
     id: 3,
     title: "Projects",
-    link: "/projects",
+    link: "projects",
     icon: <GoFileDirectory />,
     iconActive: <GoFileDirectoryFill />,
   },
   {
     id: 4,
     title: "Contacts",
-    link: "/contacts",
+    link: "contacts",
     icon: <GoMail />,
     iconActive: <GoMail />,
   },
@@ -44,7 +44,7 @@ const content = [
 
 const MenuItem = ({ title, link, icon }) => {
   return (
-    <Link href={link}>
+    <Link href={`#${link}`} passHref>
       <div className="sidebarIcons">{icon}</div>
     </Link>
   );
@@ -98,8 +98,8 @@ const SkillsItem = ({ title, percentage }) => {
     <div
       className="flex justify-center flex-row"
       style={{
-        backgroundColor: "#999999",
-        width: "80%",
+        backgroundColor: "lightgray",
+        width: "60%",
         height: "auto",
         marginTop: "5px",
         borderRadius: "1vw",
@@ -109,29 +109,33 @@ const SkillsItem = ({ title, percentage }) => {
         className="flex justify-center "
         style={{
           width: "20%",
-          background: "orange",
+          background: "lightgray",
           borderRadius: "1vw 0 0 1vw",
         }}
       >
-        <p className="" style={{ fontSize: "3vw" }}>
+        <p className="" style={{ fontSize: "1.8vw", color: "black" }}>
           {title}
         </p>
       </div>
       <div className="" style={{ width: "70%" }}>
         <div
           className=""
-          style={{ backgroundColor: "yellow", width: `${percentage}%` }}
+          style={{
+            backgroundColor: "#efa00b",
+            width: `${percentage}%`,
+            borderRadius: "0.5vw 0.5vw 0.5vw 0.5vw",
+          }}
         >
           <p
             className=""
-            style={{ color: "yellow", fontSize: "3vw", textAlign: "left" }}
+            style={{ color: "#efa00b", fontSize: "1.8vw", textAlign: "left" }}
           >
             {percentage}%
           </p>
         </div>
       </div>
       <div className="flex justify-center" style={{ width: "10%" }}>
-        <p className="" style={{ fontSize: "3vw" }}>
+        <p className="" style={{ fontSize: "1.8vw" }}>
           {percentage}%
         </p>
       </div>
@@ -164,7 +168,9 @@ export default function Home() {
             <div className="rightHeader">
               <div className="rcHeader">
                 <div className="rcHeaderIcon">
-                  <GoHome />
+                  <Link href="#home" passHref>
+                    <GoHome />
+                  </Link>
                 </div>
                 <div className="rcHeaderButton">
                   <p>Resume</p>
@@ -188,7 +194,7 @@ export default function Home() {
                     alt="Profile pic"
                   />
                 </div>
-                <div className="rchero1right">
+                <div className="rchero1right" id="home">
                   <b className="hero1Header">Web Developer</b>
                   <b className="hero1SubHeader">Marc Augustine R. Juan</b>
                   <p className="hero1Paragraph">
@@ -201,7 +207,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="rchero2">
+              <div className="rchero2" id="about">
                 <div className="flex justify-center" style={{ width: "100%" }}>
                   <div
                     className="flex justify-center"
@@ -225,10 +231,11 @@ export default function Home() {
                     skills.
                   </p>
                 </div>
+
                 <div className="flex justify-center" style={{ width: "100%" }}>
                   <div
                     className="flex justify-center"
-                    style={{ width: "9vw", borderBottom: "1px solid white" }}
+                    style={{ width: "7.1vw", borderBottom: "1px solid white" }}
                   >
                     <b className="text-white" style={{ fontSize: "3vw" }}>
                       Skills
@@ -238,12 +245,33 @@ export default function Home() {
                 <div
                   className="flex justify-center items-center flex-col"
                   style={{
-                    marginTop: "10px",
+                    paddingTop: "1vw",
+                    paddingBottom: "1vw",
                   }}
                 >
                   {skills.map((item) => {
                     return <SkillsItem {...item} key={item.id}></SkillsItem>;
                   })}
+                </div>
+
+                <div id="projects">
+                  <div
+                    className="flex justify-center"
+                    style={{ width: "100%" }}
+                  >
+                    <div
+                      className="flex justify-center"
+                      style={{ width: "11vw", borderBottom: "1px solid white" }}
+                    >
+                      <b className="text-white" style={{ fontSize: "3vw" }}>
+                        Projects
+                      </b>
+                    </div>
+                  </div>
+                  <div
+                    className="flex justify-center"
+                    style={{ width: "100%" }}
+                  ></div>
                 </div>
               </div>
             </div>
