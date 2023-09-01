@@ -33,16 +33,18 @@ width: 95%;
 padding: 0.7vw 0.7vw 0.7vw 0;
 }
 .rightHeader{
-  background-color: #777777;
+  /* background-color: #777777;
   border-radius: 1vw 1vw 0 0 ;
-  height: 8%;
+  height: auto; */
+  height: 10%;
 }
+
 .rightContent{
   background-color: #777777;
   /* border-radius: 10px; */
   border-radius: 0 0 1vw 1vw;
   /* height: 89.7%; */
-  height: 92%;
+  height: 90%;
   overflow-y: scroll;
   overflow-x: hidden;
   white-space: nowrap;
@@ -50,17 +52,19 @@ padding: 0.7vw 0.7vw 0.7vw 0;
 
 .rcHeader{
   width: 100%;
+  /* height: 10vh; */
+  height: 100%;
   background-color: #777777;
   display: flex;
   justify-content: space-between;
-  padding: 1.5vw;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
+  align-items: center;
+  /* padding: 1.5vw 1.5vw 1.5vw 1.5vw; */
+  padding: 0 1.5vw 0 1.5vw;
 
   border-radius: 1vw 1vw 0 0;
 }
 .rcHeaderIcon{
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,6 +76,7 @@ padding: 0.7vw 0.7vw 0.7vw 0;
   cursor: pointer;
 }
 .rcHeaderButton{
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;

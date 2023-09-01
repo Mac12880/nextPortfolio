@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import "../styles/homePage.css";
 import "../styles/index.css";
+import "../styles/projectSwiper.css";
 import Link from "next/link";
 
 import { BsFacebook, BsLinkedin, BsGithub } from "react-icons/bs";
