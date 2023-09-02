@@ -16,14 +16,14 @@ const projects = [
     id: 1,
     title: "Tagpros Website",
     description:
-      "A website project for my internship in Tagpros, where me aswell as the web developers of Tagpros was tasked to create a website for their Learning Management System. I was assigned to lead the interns, and work closely with the web developers in finishing the website. The teams used React.js, Next.js, Bootstrap, Node.js, and MongoDB",
+      "I undertook a website project during my internship at Tagpros, where I collaborated with the Tagpros web development team to create a Learning Management System (LMS) website. My role included leading a team of interns and working closely with the web developers to complete the project. We utilized technologies such as React.js, Next.js, Bootstrap, Node.js, and MongoDB to accomplish our goals.",
     image: "/img/TagprosWebsite1.jpg",
   },
   {
     id: 2,
     title: "Calimlim Dental Website",
     description:
-      "A website project for a local dentist clinic, where me aswell as a team of 2 other web developers was tasked to create a website for their clinic. The team used React.js, Next.js, Bootstrap, Node.js, and MongoDB",
+      "I worked on a website project for a local dentist clinic, where I collaborated with a team of two other web developers to create a website for their clinic. The team utilized technologies such as React.js, Next.js, Bootstrap, Node.js, and MongoDB.",
     image: "/img/CalimlimDentalWebsite1.jpg",
     link: "https://calimlimv5.vercel.app/",
   },
@@ -31,7 +31,7 @@ const projects = [
     id: 3,
     title: "First Portfolio Website",
     description:
-      "My first deployed website for my portfolio before my internship, where I used HTML, CSS, and JavaScript.",
+      "My first deployed website for my portfolio, created before my internship, where I utilized HTML, CSS, and JavaScript.",
     image: "/img/FirstPortfolioWebsite1.jpg",
     link: "https://mac12880.github.io/MarcAugustineJuan/",
   },
@@ -39,10 +39,17 @@ const projects = [
     id: 4,
     title: "Todo List",
     description:
-      "My first website project when I joined at a JavaScript Bootcamp hosted by Bayan Academy and J.P Morgan. This was the first website I created using HTML, CSS, and JavaScript just before my internship.",
+      "My first website project was during my enrollment in a JavaScript Bootcamp hosted by Bayan Academy and J.P. Morgan. This was the initial website I developed using HTML, CSS, and JavaScript, just before my internship.",
     image: "/img/ToDoListWebsite1.jpg",
     link: "https://mac12880.github.io/ToDoList/",
   },
+  // {
+  //   id: 5,
+  //   title: "Jetpack Compose Pomodoro Timer",
+  //   description:
+  //     "I collaborated with random team members during the Jetpack Compose Study Jam to create a Pomodoro Timer using Jetpack Compose. We utilized Kotlin, Jetpack Compose, and Android Studio for this project. Our work spanned three days, on the first day we dedicated our time to learning Jetpack Compose. The second day involved task delegation and the initiation of the project. Finally, on the third day, we focused on finalizing and polishing our project.",
+  //   image: "/img/PomTimer1small.jpg",
+  // },
 ];
 
 const ProjectSwiper = () => {

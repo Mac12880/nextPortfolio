@@ -10,6 +10,16 @@ import {
   GoFileDirectoryFill,
   GoMail,
 } from "react-icons/go";
+import {
+  AiOutlineGithub,
+  AiFillGithub,
+  AiOutlineFacebook,
+  AiFillFacebook,
+  AiOutlineLinkedin,
+  AiFillLinkedin,
+  AiOutlineMail,
+  AiFillMail,
+} from "react-icons/ai";
 import ProjectSwiper from "./projectSwiper";
 
 const content = [
@@ -34,13 +44,13 @@ const content = [
     icon: <GoFileDirectory />,
     iconActive: <GoFileDirectoryFill />,
   },
-  {
-    id: 4,
-    title: "Contacts",
-    link: "contacts",
-    icon: <GoMail />,
-    iconActive: <GoMail />,
-  },
+  // {
+  //   id: 4,
+  //   title: "Contacts",
+  //   link: "contacts",
+  //   icon: <GoMail />,
+  //   iconActive: <GoMail />,
+  // },
 ];
 
 const MenuItem = ({ title, link, icon }) => {
@@ -94,6 +104,40 @@ const skills = [
   },
 ];
 
+const socials = [
+  {
+    id: 1,
+    title: "Github",
+    link: "https://github.com/Mac12880",
+    icon: <AiOutlineGithub />,
+    iconhover: <AiFillGithub />,
+    color: "#6e5494",
+  },
+  {
+    id: 2,
+    title: "Facebook",
+    link: "",
+    icon: <AiOutlineFacebook />,
+    iconhover: <AiFillFacebook />,
+    color: "#4267B2",
+  },
+  {
+    id: 3,
+    title: "LinkedIn",
+    link: "https://www.linkedin.com/in/marc-augustine-juan-b00b03237/",
+    icon: <AiOutlineLinkedin />,
+    iconhover: <AiFillLinkedin />,
+    color: "#0077B5",
+  },
+  {
+    id: 4,
+    title: "Email",
+    link: "#contacts",
+    icon: <AiOutlineMail />,
+    iconhover: <AiFillMail />,
+    color: "#c71610",
+  },
+];
 const SkillsItem = ({ title, percentage }) => {
   return (
     <div
@@ -143,6 +187,7 @@ const SkillsItem = ({ title, percentage }) => {
     </div>
   );
 };
+
 export default function Home() {
   return (
     <>
@@ -162,6 +207,27 @@ export default function Home() {
               </div> */}
               {content.map((item) => {
                 return <MenuItem {...item} key={item.id}></MenuItem>;
+              })}
+              <hr style={{ color: "white", width: "80%" }} />
+
+              {socials.map((item) => {
+                return (
+                  <Link key={item.id} className="hover-button" href={item.link}>
+                    {/* default */}
+                    <span className="hover-button--off">
+                      <div className="sidebarIcons">{item.icon}</div>
+                    </span>
+                    {/* hover */}
+                    <span className="hover-button--on">
+                      <div
+                        className="sidebarIcons"
+                        style={{ color: `${item.color}` }}
+                      >
+                        {item.iconhover}
+                      </div>
+                    </span>
+                  </Link>
+                );
               })}
             </div>
           </div>
@@ -199,12 +265,11 @@ export default function Home() {
                   <b className="hero1Header">Web Developer</b>
                   <b className="hero1SubHeader">Marc Augustine R. Juan</b>
                   <p className="hero1Paragraph">
-                    Looking for an internship opportunity in software
-                    development as a front-end web developer or full-stack
-                    developer, where I can apply my theoretical knowledge to
-                    real-world projects, enhance my technical skills, and gain
-                    valuable experience working in a collaborative team
-                    environment
+                    I am seeking an opportunity in software development as a
+                    front-end web developer or full-stack developer, where I can
+                    apply my theoretical knowledge to real-world projects,
+                    enhance my technical skills, and gain valuable experience
+                    while working in a collaborative team environment.
                   </p>
                 </div>
               </div>
@@ -310,7 +375,10 @@ export default function Home() {
           </div>
         </div>
         <div className="footer2">
-          <b className="text-white">Footer</b>
+          <b className="text-white">MARC JUAN</b>
+          <b className="" style={{ marginLeft: "0.5vw", color: "yellow" }}>
+            ©2023
+          </b>
         </div>
       </main>
     </>
