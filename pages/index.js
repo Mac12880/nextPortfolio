@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,7 +22,9 @@ import {
   AiFillMail,
 } from "react-icons/ai";
 import ProjectSwiper from "./projectSwiper";
-
+import { TypeAnimation } from "react-type-animation";
+import emailjs from "@emailjs/browser";
+import SimpleSlider from "./reactSlick";
 const content = [
   {
     id: 1,
@@ -55,7 +58,7 @@ const content = [
 
 const MenuItem = ({ title, link, icon }) => {
   return (
-    <Link href={`#${link}`} passHref>
+    <Link href={`/#${link}`} passHref>
       <div className="sidebarIcons">{icon}</div>
     </Link>
   );
@@ -189,6 +192,26 @@ const SkillsItem = ({ title, percentage }) => {
 };
 
 export default function Home() {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_cs9rcyz",
+        "template_5s9ae0e",
+        form.current,
+        "9IIdycsS2IbbLhtZc"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
   return (
     <>
       <Head>
@@ -235,7 +258,7 @@ export default function Home() {
             <div className="rightHeader">
               <div className="rcHeader">
                 <div className="rcHeaderIcon">
-                  <Link href="#home" passHref>
+                  <Link href="/" passHref>
                     <GoHome />
                   </Link>
                 </div>
@@ -253,7 +276,7 @@ export default function Home() {
                   <p>Resume</p>
                 </div>
               </div> */}
-              <div className="rchero1">
+              <section className="rchero1">
                 <div className="rchero1left">
                   <img
                     className="profilePic"
@@ -262,7 +285,14 @@ export default function Home() {
                   />
                 </div>
                 <div className="rchero1right" id="home">
-                  <b className="hero1Header">Web Developer</b>
+                  {/* <b className="hero1Header">Web Developer</b> */}
+                  <TypeAnimation
+                    className="hero1Header"
+                    sequence={[`I'm a Developer and a Designer.`, 1000, ""]}
+                    speed={50}
+                    style={{ whiteSpace: "normal", fontWeight: "bold" }}
+                    repeat={Infinity}
+                  />
                   <b className="hero1SubHeader">Marc Augustine R. Juan</b>
                   <p className="hero1Paragraph">
                     I am seeking an opportunity in software development as a
@@ -272,8 +302,8 @@ export default function Home() {
                     while working in a collaborative team environment.
                   </p>
                 </div>
-              </div>
-              <div className="rchero2" id="about">
+              </section>
+              <section className="rchero2" id="about">
                 <div className="flex justify-center" style={{ width: "100%" }}>
                   <div
                     className="flex justify-center"
@@ -320,10 +350,14 @@ export default function Home() {
                   })}
                 </div>
 
-                <div id="projects">
+                <section id="projects">
                   <div
                     className="flex justify-center items-center flex-col"
-                    style={{ width: "100%", marginTop: "5vw" }}
+                    style={{
+                      width: "90vw",
+                      marginTop: "5vw",
+                      // height: "50vw",
+                    }}
                   >
                     <div
                       className="flex justify-center"
@@ -338,45 +372,156 @@ export default function Home() {
                         width: "90%",
                         marginTop: "1vw",
                         marginBottom: "1vw",
+                        height: "100%",
                       }}
                     >
-                      <ProjectSwiper />
+                      {/* <ProjectSwiper /> */}
+                      <SimpleSlider />
                     </div>
                   </div>
                   <div className="flex justify-center"></div>
-                </div>
+                </section>
 
-                <div id="contacts">
-                  <div
-                    className="flex justify-center items-center flex-col"
-                    style={{ width: "100%", marginTop: "5vw" }}
-                  >
-                    <div
-                      className="flex justify-center"
-                      style={{ width: "11vw", borderBottom: "1px solid white" }}
-                    >
-                      <b className="text-white" style={{ fontSize: "3vw" }}>
-                        Contact Me
-                      </b>
+                <section
+                  id="contacts"
+                  className="flex justify-center items-center "
+                >
+                  <div className="flex justify-center items-center w-11/12 mt-60 h-full p-4 my-8 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-white">
+                    {/* left */}
+                    <div className="flex flex-col w-2/4 text-white items-center content-between h-1/2">
+                      <div className="flex justify-center items-start w-full ">
+                        <b style={{ fontSize: "3vw" }}>Contact Me</b>
+                      </div>
+
+                      <div className="flex justify-evenly items-end w-3/4 h-1/2">
+                        {...socials.map((item) => {
+                          if (item.title === "Email") {
+                            return;
+                          } else {
+                            return (
+                              <Link
+                                key={item.id}
+                                className="hover-button"
+                                href={item.link}
+                              >
+                                {/* default */}
+                                <span className="hover-button--off">
+                                  <div
+                                    className="sidebarIcons"
+                                    // style={{ fontSize: "2vw" }}
+                                  >
+                                    {item.icon}
+                                  </div>
+                                </span>
+                                {/* hover */}
+                                <span className="hover-button--on">
+                                  <div
+                                    className="sidebarIcons"
+                                    style={{ color: `${item.color}` }}
+                                  >
+                                    {item.iconhover}
+                                  </div>
+                                </span>
+                              </Link>
+                            );
+                          }
+                        })}
+                      </div>
                     </div>
-                    <div
-                      style={{
-                        width: "90%",
-                        height: "45vw",
-                        marginTop: "1vw",
-                        marginBottom: "1vw",
-                      }}
-                    ></div>
+                    {/* right */}
+                    <div className="flex justify-center items-center flex-col w-2/4">
+                      <form
+                        ref={form}
+                        onSubmit={sendEmail}
+                        className="flex justify-center items-center flex-col w-full pt-6 pb-6"
+                      >
+                        {/* Name */}
+                        <div className=" relative z-0 mb-5 w-3/4">
+                          <input
+                            type="text"
+                            id="floating_standard_name"
+                            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" "
+                            name="name_from"
+                          />
+                          <label
+                            htmlFor="floating_standard_name"
+                            className="absolute text-sm text-gray-500 dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                          >
+                            Name
+                          </label>
+                        </div>
+                        {/* email */}
+                        <div className=" relative z-0 mb-5 w-3/4">
+                          <input
+                            type="email"
+                            id="floating_standard_email"
+                            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" "
+                            name="email_from"
+                          />
+                          <label
+                            htmlFor="floating_standard_email"
+                            className="absolute text-sm text-gray-500 dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                          >
+                            Email
+                          </label>
+                        </div>
+                        {/* Subject */}
+                        <div className=" relative z-0 mb-5 w-3/4">
+                          <input
+                            type="text"
+                            id="floating_standard_subject"
+                            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" "
+                            name="subject_from"
+                          />
+                          <label
+                            htmlFor="floating_standard_subject"
+                            className="absolute text-sm text-gray-500 dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                          >
+                            Subject
+                          </label>
+                        </div>
+
+                        {/* message */}
+                        <div className=" relative z-0 mb-5 w-3/4">
+                          <textarea
+                            type="email"
+                            id="floating_standard_message"
+                            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
+                            placeholder=" "
+                            name="message_from"
+                            style={{ minHeight: "50px" }}
+                          />
+                          <label
+                            htmlFor="floating_standard_message"
+                            className="absolute text-sm text-gray-500 dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                          >
+                            Message
+                          </label>
+                        </div>
+                        <div className="relative z-0 ">
+                          <button
+                            type="submit"
+                            className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+                            style={{ width: "100%" }}
+                          >
+                            Send
+                          </button>
+                        </div>
+                      </form>
+                    </div>
                   </div>
-                  <div className="flex justify-center"></div>
-                </div>
-              </div>
+                  <div className="flex justify-center items-center"></div>
+                </section>
+              </section>
             </div>
           </div>
         </div>
         <div className="footer2">
           <b className="text-white">MARC JUAN</b>
-          <b className="" style={{ marginLeft: "0.5vw", color: "yellow" }}>
+          <b className="" style={{ marginLeft: "0.5vw", color: "orange" }}>
             ©2023
           </b>
         </div>

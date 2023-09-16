@@ -84,6 +84,7 @@ padding: 0.7vw 0.7vw 0.7vw 0;
   font-size: 2vw;
   padding: 0.5vw 1vw;
   cursor: pointer;
+  /* font-weight: ; */
 }
 .rcHeaderButton{
   height: auto;
@@ -122,7 +123,7 @@ padding: 0.7vw 0.7vw 0.7vw 0;
   width: 100%;
   height: auto;
   color: #ffffff;
-  font-size: 2vw;
+  font-size: 2.5vw;
   text-align: left;
   /* padding-top: 200px; */
   /* padding-top: 8vh; */
@@ -201,4 +202,9 @@ padding: 0.7vw 0.7vw 0.7vw 0;
 
 .hover-button:hover .hover-button--on {
   display: inline;
+}
+/* Hover */
+
+.rcHero2ContactInputs{
+  width: 50%;
 }
