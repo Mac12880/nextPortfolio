@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import Link from "next/link";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import ProjectsModal from "./projectsModal";
 
 export default class SimpleSlider extends Component {
   render() {
@@ -61,9 +62,10 @@ export default class SimpleSlider extends Component {
               <div key={project.id}>
                 <div className="flex justify-start items-center">
                   <h2 style={{ fontSize: "2vw" }}> {project.title}</h2>
-                  <button className="p-1">
+                  {/* <button className="p-1">
                     <AiOutlineInfoCircle style={{ fontSize: "1.5vw" }} />
-                  </button>
+                  </button> */}
+                  <ProjectsModal project={project} />
                 </div>
                 <div
                   style={{

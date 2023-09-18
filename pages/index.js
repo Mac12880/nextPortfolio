@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,40 +21,18 @@ import {
   AiOutlineMail,
   AiFillMail,
 } from "react-icons/ai";
-import ProjectSwiper from "./projectSwiper";
+// import ProjectSwiper from "./projectSwiper";
 import { TypeAnimation } from "react-type-animation";
 import emailjs from "@emailjs/browser";
-import SimpleSlider from "./reactSlick";
-const content = [
-  {
-    id: 1,
-    title: "Home",
-    link: "home",
-    icon: <GoHome />,
-    iconActive: <GoHomeFill />,
-  },
-  {
-    id: 2,
-    title: "About Me",
-    link: "about",
-    icon: <GoPerson />,
-    iconActive: <GoPersonFill />,
-  },
-  {
-    id: 3,
-    title: "Projects",
-    link: "projects",
-    icon: <GoFileDirectory />,
-    iconActive: <GoFileDirectoryFill />,
-  },
-  // {
-  //   id: 4,
-  //   title: "Contacts",
-  //   link: "contacts",
-  //   icon: <GoMail />,
-  //   iconActive: <GoMail />,
-  // },
-];
+import SimpleSlider from "../components/reactSlick";
+//
+import { useAtom } from "jotai";
+import { projectsModal } from "../atom/AtomStates";
+//
+import Slider from "react-slick";
+import { AiOutlineInfoCircle } from "react-icons/ai";
+import { projects, skills, content, socials } from "../constant/constant";
+import ProjectsModal from "../components/projectsModal";
 
 const MenuItem = ({ title, link, icon }) => {
   return (
@@ -64,83 +42,6 @@ const MenuItem = ({ title, link, icon }) => {
   );
 };
 
-const skills = [
-  {
-    id: 1,
-    title: "HTML",
-    percentage: 95,
-  },
-  {
-    id: 2,
-    title: "CSS",
-    percentage: 95,
-  },
-  {
-    id: 3,
-    title: "JavaScript",
-    percentage: 80,
-  },
-  {
-    id: 4,
-    title: "React.js",
-    percentage: 80,
-  },
-  {
-    id: 5,
-    title: "Node.js",
-    percentage: 50,
-  },
-  {
-    id: 6,
-    title: "Next.js",
-    percentage: 90,
-  },
-  {
-    id: 7,
-    title: "UI Design",
-    percentage: 80,
-  },
-  {
-    id: 8,
-    title: "Figma",
-    percentage: 90,
-  },
-];
-
-const socials = [
-  {
-    id: 1,
-    title: "Github",
-    link: "https://github.com/Mac12880",
-    icon: <AiOutlineGithub />,
-    iconhover: <AiFillGithub />,
-    color: "#6e5494",
-  },
-  {
-    id: 2,
-    title: "Facebook",
-    link: "",
-    icon: <AiOutlineFacebook />,
-    iconhover: <AiFillFacebook />,
-    color: "#4267B2",
-  },
-  {
-    id: 3,
-    title: "LinkedIn",
-    link: "https://www.linkedin.com/in/marc-augustine-juan-b00b03237/",
-    icon: <AiOutlineLinkedin />,
-    iconhover: <AiFillLinkedin />,
-    color: "#0077B5",
-  },
-  {
-    id: 4,
-    title: "Email",
-    link: "#contacts",
-    icon: <AiOutlineMail />,
-    iconhover: <AiFillMail />,
-    color: "#c71610",
-  },
-];
 const SkillsItem = ({ title, percentage }) => {
   return (
     <div
@@ -212,6 +113,18 @@ export default function Home() {
       );
     e.target.reset();
   };
+  // Projects Modal End
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  const [showModal, setShowModal] = React.useState(false);
+  // Projects Modal End
+  const [projectModal, setProjectsModal] = useAtom(projectsModal);
+
   return (
     <>
       <Head>
@@ -222,12 +135,8 @@ export default function Home() {
       </Head>
       <main className="indexBg">
         <div className="hero1">
-          {/* <b>Test</b> */}
           <div className="left">
             <div className="leftContainer">
-              {/* <div className="sidebarIcons">
-                <GoHome />
-              </div> */}
               {content.map((item) => {
                 return <MenuItem {...item} key={item.id}></MenuItem>;
               })}
@@ -268,14 +177,6 @@ export default function Home() {
               </div>
             </div>
             <div className="rightContent">
-              {/* <div className="rcHeader">
-                <div className="rcHeaderIcon">
-                  <GoHome />
-                </div>
-                <div className="rcHeaderButton">
-                  <p>Resume</p>
-                </div>
-              </div> */}
               <section className="rchero1">
                 <div className="rchero1left">
                   <img
@@ -356,7 +257,6 @@ export default function Home() {
                     style={{
                       width: "90vw",
                       marginTop: "5vw",
-                      // height: "50vw",
                     }}
                   >
                     <div
@@ -376,7 +276,76 @@ export default function Home() {
                       }}
                     >
                       {/* <ProjectSwiper /> */}
-                      <SimpleSlider />
+                      {/* <SimpleSlider /> */}
+                      <div className="text-black dark:text-white">
+                        <Slider {...settings}>
+                          {projects.map((project) => {
+                            return (
+                              <div key={project.id}>
+                                <div className="flex justify-start items-center">
+                                  <h2 style={{ fontSize: "2vw" }}>
+                                    {" "}
+                                    {project.title}
+                                  </h2>
+                                  <button
+                                    className="p-1"
+                                    onClick={() => {
+                                      setProjectsModal({
+                                        ...projectModal,
+                                        modalName: project.id,
+                                      });
+                                      console.log(projectModal);
+                                    }}
+                                  >
+                                    <AiOutlineInfoCircle
+                                      style={{ fontSize: "1.5vw" }}
+                                    />
+                                  </button>
+                                </div>
+                                <div
+                                  style={{
+                                    textAlign: "center",
+                                    background: "lightgray",
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    flexDirection: "column",
+                                    height: "100%",
+                                  }}
+                                >
+                                  <img
+                                    src={project.image}
+                                    alt={`${project.title} picture`}
+                                    style={{
+                                      display: "block",
+                                      width: "90vw",
+                                      height: "45vw",
+                                      objectFit: "full",
+                                    }}
+                                  />
+                                  <div className="projectSwiperOverlay">
+                                    <div className="projectSwiperHeaderText">
+                                      {project.title}
+                                    </div>
+                                    <div className="projectSwiperText">
+                                      {project.description}
+                                    </div>
+                                    {project.link ? (
+                                      <Link href={project.link} passHref>
+                                        <button className="projectSwiperSiteButton">
+                                          Visit Site
+                                        </button>
+                                      </Link>
+                                    ) : (
+                                      <></>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </Slider>
+                      </div>
                     </div>
                   </div>
                   <div className="flex justify-center"></div>
@@ -508,7 +477,7 @@ export default function Home() {
                         <div className="relative z-0 ">
                           <button
                             type="submit"
-                            className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+                            className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-zinc-800 dark:text-white dark:border-white dark:hover:bg-zinc-700 dark:hover:border-white dark:focus:ring-zinc-900"
                             style={{ width: "100%" }}
                           >
                             Send
@@ -529,6 +498,7 @@ export default function Home() {
             ©2023
           </b>
         </div>
+        <ProjectsModal />
       </main>
     </>
   );
