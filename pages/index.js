@@ -386,7 +386,7 @@ export default function Home() {
                   id="contacts"
                   className="flex justify-center items-center "
                 >
-                  <div className="flex justify-center items-center w-11/12 mt-60 h-full p-4 my-8 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-white">
+                  <div className="flex justify-center items-center w-11/12 mt-60 h-full p-4 my-8 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 lg:p-8 dark:bg-zinc-800 dark:border-gray-200">
                     {/* left */}
                     <div className="flex flex-col w-2/4 text-white items-center content-between h-1/2">
                       <div className="flex justify-center items-start w-full ">
@@ -443,6 +443,7 @@ export default function Home() {
                             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                             placeholder=" "
                             name="name_from"
+                            required
                           />
                           <label
                             htmlFor="floating_standard_name"
@@ -459,6 +460,7 @@ export default function Home() {
                             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                             placeholder=" "
                             name="email_from"
+                            required
                           />
                           <label
                             htmlFor="floating_standard_email"
@@ -475,6 +477,7 @@ export default function Home() {
                             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                             placeholder=" "
                             name="subject_from"
+                            required
                           />
                           <label
                             htmlFor="floating_standard_subject"
@@ -493,6 +496,7 @@ export default function Home() {
                             placeholder=" "
                             name="message_from"
                             style={{ minHeight: "50px" }}
+                            required
                           />
                           <label
                             htmlFor="floating_standard_message"
