@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import {
@@ -20,13 +20,12 @@ import {
   AiOutlineMail,
   AiFillMail,
 } from "react-icons/ai";
-import SimpleSlider from "../components/RightContent/projects";
 import ProjectsModal from "../components/RightContent/projectsModal";
 import Footer from "../components/RightContent/footer";
 import About from "../components/RightContent/about";
 import ContactMe from "../components/RightContent/contactMe";
 import LeftContent from "../components/LeftContent/leftContent";
-import RightHero1 from "@/components/RightContent/rightHero1";
+import RightHero1 from "../components/RightContent/rightHero1";
 import Projects from "../components/RightContent/projects";
 
 export default function Home() {
@@ -67,12 +66,13 @@ export default function Home() {
                     <GoHome className="text-[4vh] lg:text-[2vw]" />
                   </Link>
                 </div>
-                <div
+                <Link
                   // Resume
+                  href="/JUAN-StudentResume.pdf"
                   className="h-[6vh] w-[12vh] px-[1vw] py[0.5vw] lg:h-[70%] lg:w-[10vw] flex justify-center items-center bg-black bg-opacity-80 text-white cursor-pointer rounded-full lg:rounded-full hover:bg-opacity-100"
                 >
                   <p className="text-[2.5vh] lg:text-[1.5vw]">Resume</p>
-                </div>
+                </Link>
               </div>
             </div>
             <div
