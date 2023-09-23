@@ -162,7 +162,7 @@ export const socials = [
   {
     id: 3,
     title: "LinkedIn",
-    link: "https://www.linkedin.com/in/marc-augustine-juan-b00b03237/",
+    link: "https://www.linkedin.com/in/marcjuan1/",
     icon: <AiOutlineLinkedin />,
     iconhover: <AiFillLinkedin />,
     color: "#0077B5",
