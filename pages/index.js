@@ -37,27 +37,58 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="indexBg">
-        <div className="hero1">
-          <div className="left">
+      <main className="bg-black h-full w-[100%]">
+        <div
+          // content1
+          className="flex flex-row h-[89vh] w-[100%] lg:h-[97vh] p-[0.7vw]"
+        >
+          <div
+            // Left Content
+            className="hidden lg:flex lg:w-[5%]"
+            style={{ padding: "0 0.7vw 0 0" }}
+          >
             <LeftContent />
           </div>
-          <div className="right dark">
-            <div className="rightHeader">
-              <div className="rcHeader">
-                <div className="rcHeaderIcon">
+          <div
+            // Right Content
+            className="dark w-full h-[88vh] lg:w-[95%] lg:h-full "
+            style={{ background: "#777777", borderRadius: "1vw 1vw 1vw 1vw" }}
+          >
+            <div className="h-[10%]">
+              <div
+                className="w-[100%] h-[100%] flex justify-between items-center px-[1vw] overflow-hidden"
+                style={{ background: "#777777", borderRadius: "1vw 1vw 0 0" }}
+              >
+                <div
+                  // Home
+                  className="h-[6vh] w-[6vh] px-[1vw] py[0.5vw] lg:h-[70%] lg:w-[5%] flex justify-center items-center bg-black bg-opacity-80 text-white cursor-pointer rounded-full lg:rounded-full hover:bg-opacity-100"
+                >
                   <Link href="#home" passHref>
-                    <GoHome />
+                    <GoHome className="text-[4vh] lg:text-[2vw]" />
                   </Link>
                 </div>
-                <div className="rcHeaderButton">
-                  <p>Resume</p>
+                <div
+                  // Resume
+                  className="h-[6vh] w-[12vh] px-[1vw] py[0.5vw] lg:h-[70%] lg:w-[10vw] flex justify-center items-center bg-black bg-opacity-80 text-white cursor-pointer rounded-full lg:rounded-full hover:bg-opacity-100"
+                >
+                  <p className="text-[2.5vh] lg:text-[1.5vw]">Resume</p>
                 </div>
               </div>
             </div>
-            <div className="rightContent">
+            <div
+              className="w-full h-[90%] overflow-y-scroll overflow-x-hidden lg:overflow-y-scroll lg:overflow-x-hidden whitespace-nowrap"
+              style={{ borderRadius: "0 0 1vw 1vw", background: "#777777" }}
+            >
               <RightHero1 />
-              <section className="rchero2">
+              <section
+                // rchero2
+                className="w-full p-[1vw] h-auto "
+                style={{
+                  background: "rgb(0,0,0)",
+                  background:
+                    "linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(18,18,18,0.7) 3%, rgba(18,18,18,0.8) 13%, rgba(18,18,18,0.9) 34%, rgba(18,18,18,1) 46%, rgba(18,18,18,1) 100%)",
+                }}
+              >
                 <About />
                 <Projects />
                 <ContactMe />

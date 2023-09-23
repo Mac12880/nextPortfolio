@@ -52,31 +52,41 @@ export const skills = [
   },
   {
     id: 3,
+    title: "Bootstrap CSS",
+    percentage: 98,
+  },
+  {
+    id: 4,
+    title: "Tailwind CSS",
+    percentage: 98,
+  },
+  {
+    id: 5,
     title: "JavaScript",
     percentage: 80,
   },
   {
-    id: 4,
+    id: 6,
     title: "React.js",
     percentage: 80,
   },
   {
-    id: 5,
+    id: 7,
     title: "Node.js",
     percentage: 50,
   },
   {
-    id: 6,
+    id: 8,
     title: "Next.js",
     percentage: 90,
   },
   {
-    id: 7,
+    id: 9,
     title: "UI Design",
     percentage: 80,
   },
   {
-    id: 8,
+    id: 10,
     title: "Figma",
     percentage: 90,
   },

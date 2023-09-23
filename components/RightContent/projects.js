@@ -18,36 +18,24 @@ const Projects = () => {
 
   return (
     <section id="projects">
-      <div
-        className="flex justify-center items-center flex-col"
-        style={{
-          width: "90vw",
-          marginTop: "5vw",
-        }}
-      >
+      <div className="flex justify-center items-center flex-col w-[100%] mt-[5vw]">
         <div
-          className="flex justify-center"
-          style={{ width: "11vw", borderBottom: "1px solid white" }}
+          className="flex justify-center w-[9vw] lg:w-[11vw]"
+          style={{ borderBottom: "1px solid white" }}
         >
-          <b className="text-white" style={{ fontSize: "3vw" }}>
-            Projects
-          </b>
+          <b className="text-white text-[5vw] lg:text-[3vw]">Projects</b>
         </div>
-        <div
-          style={{
-            width: "90%",
-            marginTop: "1vw",
-            marginBottom: "1vw",
-            height: "100%",
-          }}
-        >
+        <div className="w-[90%] my-[1vw] h-[100%]">
           <div className="text-black dark:text-white">
             <Slider {...settings}>
               {projects.map((project) => {
                 return (
                   <div key={project.id}>
                     <div className="flex justify-start items-center">
-                      <h2 style={{ fontSize: "2vw" }}> {project.title}</h2>
+                      <h2 className="text-[4vw] lg:text-[2vw] ps-1">
+                        {" "}
+                        {project.title}
+                      </h2>
                       <button
                         className="p-1"
                         onClick={() => {
@@ -58,47 +46,15 @@ const Projects = () => {
                           console.log(projectModal);
                         }}
                       >
-                        <AiOutlineInfoCircle style={{ fontSize: "1.5vw" }} />
+                        <AiOutlineInfoCircle className="text-[3.5vw] lg:text-[1.5vw]" />
                       </button>
                     </div>
-                    <div
-                      style={{
-                        textAlign: "center",
-                        background: "lightgray",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        flexDirection: "column",
-                        height: "100%",
-                      }}
-                    >
+                    <div className="h-[100%] text-center bg-gray-300 flex justify-center items-center flex-col">
                       <img
+                        className="block w-[90vw] h-[45vw] object-fit"
                         src={project.image}
                         alt={`${project.title} picture`}
-                        style={{
-                          display: "block",
-                          width: "90vw",
-                          height: "45vw",
-                          objectFit: "full",
-                        }}
                       />
-                      <div className="projectSwiperOverlay">
-                        <div className="projectSwiperHeaderText">
-                          {project.title}
-                        </div>
-                        <div className="projectSwiperText">
-                          {project.description}
-                        </div>
-                        {project.link ? (
-                          <Link href={project.link} passHref>
-                            <button className="projectSwiperSiteButton">
-                              Visit Site
-                            </button>
-                          </Link>
-                        ) : (
-                          <></>
-                        )}
-                      </div>
                     </div>
                   </div>
                 );

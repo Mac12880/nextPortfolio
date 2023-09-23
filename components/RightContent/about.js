@@ -4,68 +4,50 @@ import { skills, socials } from "../../constant/constant";
 const About = () => {
   const SkillsItem = ({ title, percentage }) => {
     return (
-      <div
-        className="flex justify-center flex-row"
-        style={{
-          backgroundColor: "lightgray",
-          width: "60%",
-          height: "auto",
-          marginTop: "5px",
-          borderRadius: "1vw",
-        }}
-      >
+      <div className="flex justify-center flex-row w-[90%] lg:w-[60%] h-auto mt-[5px] bg-gray-300 rounded-[1vw]">
         <div
-          className="flex justify-center "
+          className="flex justify-center w-[30%] bg-gray-300"
           style={{
-            width: "20%",
-            background: "lightgray",
             borderRadius: "1vw 0 0 1vw",
           }}
         >
-          <p className="" style={{ fontSize: "1.8vw", color: "black" }}>
-            {title}
-          </p>
+          <p className="text-[3vw] lg:text-[1.8vw] text-black">{title}</p>
         </div>
-        <div className="" style={{ width: "70%" }}>
+        <div className="w-[60%]">
           <div
-            className=""
+            className="rounded-[0.5vw]"
             style={{
               backgroundColor: "#efa00b",
               width: `${percentage}%`,
-              borderRadius: "0.5vw 0.5vw 0.5vw 0.5vw",
             }}
           >
             <p
-              className=""
-              style={{ color: "#efa00b", fontSize: "1.8vw", textAlign: "left" }}
+              className="text-[3vw] lg:text-[1.8vw] text-left]"
+              style={{ color: "#efa00b" }}
             >
               {percentage}%
             </p>
           </div>
         </div>
-        <div className="flex justify-center" style={{ width: "10%" }}>
-          <p className="" style={{ fontSize: "1.8vw" }}>
-            {percentage}%
-          </p>
+        <div className="flex justify-center text-black w-[10%]">
+          <p className="text-[3vw] lg:text-[1.8vw]">{percentage}%</p>
         </div>
       </div>
     );
   };
   return (
-    <section id="about">
-      <div className="flex justify-center" style={{ width: "100%" }}>
+    <section id="about" className="pt-[30px] pb-[50px] lg:py-0">
+      <div className="flex justify-center w-[100%]">
         <div
-          className="flex justify-center"
-          style={{ width: "9vw", borderBottom: "1px solid white" }}
+          className="flex justify-center w-[9vw] "
+          style={{ borderBottom: "1px solid white" }}
         >
-          <b className="text-white" style={{ fontSize: "3vw" }}>
-            About
-          </b>
+          <b className="text-white text-[5vw] lg:text-[3vw]">About</b>
         </div>
       </div>
 
       <div className="flex justify-center">
-        <p className="rcHero2AboutMe text-white">
+        <p className="w-[94%] text-white text-[3vw] lg:text-[2vw] text-justify pt-[1vw] pb-[1vw] whitespace-pre-wrap">
           Hi, I&apos;m Marc. I have completed my internship and am now embarking
           on my freelance journey as either a front-end web developer or a
           full-stack developer. I&apos;ve already undertaken projects using
@@ -76,26 +58,17 @@ const About = () => {
         </p>
       </div>
 
-      <div className="flex justify-center" style={{ width: "100%" }}>
+      <div className="flex justify-center w-[100%] pt-[30px] lg:pt-0">
         <div
-          className="flex justify-center"
+          className="flex justify-center w-[9vw] lg:w-[7.1vw]"
           style={{
-            width: "7.1vw",
             borderBottom: "1px solid white",
           }}
         >
-          <b className="text-white" style={{ fontSize: "3vw" }}>
-            Skills
-          </b>
+          <b className="text-white text-[5vw] lg:text-[3vw]">Skills</b>
         </div>
       </div>
-      <div
-        className="flex justify-center items-center flex-col"
-        style={{
-          paddingTop: "1vw",
-          paddingBottom: "1vw",
-        }}
-      >
+      <div className="flex justify-center items-center flex-col pt-[1vw] pb-[1vw]">
         {skills.map((item) => {
           return <SkillsItem {...item} key={item.id}></SkillsItem>;
         })}
