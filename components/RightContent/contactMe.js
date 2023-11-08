@@ -43,6 +43,7 @@ const ContactMe = () => {
                     key={item.id}
                     className="hover-button mx-[1vw] lg:mx-0"
                     href={item.link}
+                    target="_blank"
                   >
                     {/* default */}
                     <span className="hover-button--off">

@@ -30,7 +30,12 @@ const LeftContent = () => {
 
       {socials.map((item) => {
         return (
-          <Link key={item.id} className="hover-button" href={item.link}>
+          <Link
+            key={item.id}
+            className="hover-button"
+            href={item.link}
+            target="_blank"
+          >
             {/* default */}
             <span className="hover-button--off">
               <div

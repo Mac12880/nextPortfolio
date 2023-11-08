@@ -52,6 +52,7 @@ const ProjectsModal = () => {
                                 className="bg-orange-700 text-white active:bg-orange-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none hover:bg-transparent hover:text-orange-500 hover:border hover:border-solid hover:border-orange-500 focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                 type="button"
                                 href={project.link}
+                                target="_blank"
                               >
                                 Visit Site
                               </Link>

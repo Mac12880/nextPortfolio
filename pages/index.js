@@ -69,6 +69,7 @@ export default function Home() {
                 <Link
                   // Resume
                   href="/JUAN-StudentResume.pdf"
+                  target="_blank"
                   className="h-[6vh] w-[12vh] px-[1vw] py[0.5vw] lg:h-[70%] lg:w-[10vw] flex justify-center items-center bg-black bg-opacity-80 text-white cursor-pointer rounded-full lg:rounded-full hover:bg-opacity-100"
                 >
                   <p className="text-[2.5vh] lg:text-[1.5vw]">Resume</p>
