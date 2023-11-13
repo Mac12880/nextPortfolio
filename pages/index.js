@@ -36,10 +36,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-black h-full w-[100%]">
+      {/* <main className="bg-black h-full w-[100%]"> */}
+      <main className="bg-black h-[100%] w-[100%]">
         <div
           // content1
-          className="flex flex-row h-[89vh] w-[100%] lg:h-[97vh] p-[0.7vw]"
+          // className="flex flex-row h-[89vh] w-[100%] lg:h-[97vh] p-[0.7vw]"
+          className="flex flex-row h-[89%] w-[100%] lg:h-[97vh] p-[0.7vw]"
         >
           <div
             // Left Content

@@ -23,7 +23,8 @@ const Footer = () => {
       </footer>
       {/* For Mobile and Ipads */}
       <footer
-        className="h-[11vh] flex lg:hidden justify-evenly items-center sticky bg-black inset-0 bottom-0 w-full font-light"
+        // className="h-[11vh] flex lg:hidden justify-evenly items-center sticky bg-black inset-0 bottom-0 w-full font-light"
+        className="h-[11%] flex lg:hidden justify-evenly items-center sticky bg-black inset-0 bottom-0 w-full font-light"
         // style={{ height: "10vh" }}
       >
         {content.map((item) => {
