@@ -33,7 +33,7 @@ const ContactMe = () => {
             <b className="text-[5vw] lg:text-[3vw]">Contact Me</b>
           </div>
 
-          <div className="flex justify-center lg:justify-evenly items-end w-[75%] h-1/2">
+          <div className="flex justify-evenly lg:justify-evenly items-end w-[75%] h-1/2">
             {...socials.map((item) => {
               if (item.title === "Email") {
                 return;

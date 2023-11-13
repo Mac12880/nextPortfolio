@@ -15,11 +15,11 @@ const About = () => {
         </div>
         <div className="w-[60%]">
           <div
-            className="rounded-[0.5vw]"
-            style={{
-              backgroundColor: "#efa00b",
-              width: `${percentage}%`,
-            }}
+            className={`rounded-[0.5vw] bg-[#efa00b] w-[${percentage}%]`}
+            // style={{
+            //   backgroundColor: "#efa00b",
+            //   width: `${percentage}%`,
+            // }}
           >
             <p
               className="text-[3vw] lg:text-[1.8vw] text-left]"
@@ -42,7 +42,7 @@ const About = () => {
           className="flex justify-center w-[9vw] "
           style={{ borderBottom: "1px solid white" }}
         >
-          <b className="text-white text-[5vw] lg:text-[3vw]">About</b>
+          <b className="text-white text-[5vw] lg:text-[3vw] mt-[5vw]">About</b>
         </div>
       </div>
 

@@ -8,7 +8,8 @@ const Footer = () => {
       <Link href={`/#${link}`} passHref>
         <div className="flex justify-center items-center flex-col text-[5vw] md:text-[4vw] text-white">
           {icon}
-          <p className="text-[3vw] md:text-[2vw]">{title}</p>
+          {/* <p className="text-[3vw] md:text-[2vw]">{title}</p> */}
+          <p className="text-[3vw]">{title}</p>
         </div>
       </Link>
     );
@@ -24,7 +25,7 @@ const Footer = () => {
       {/* For Mobile and Ipads */}
       <footer
         // className="h-[11vh] flex lg:hidden justify-evenly items-center sticky bg-black inset-0 bottom-0 w-full font-light"
-        className="h-[11%] flex lg:hidden justify-evenly items-center sticky bg-black inset-0 bottom-0 w-full font-light"
+        className="h-[15%] py-[1.5vw] flex lg:hidden justify-evenly items-center sticky bg-black inset-0 bottom-0 w-full font-light"
         // style={{ height: "10vh" }}
       >
         {content.map((item) => {
@@ -33,7 +34,8 @@ const Footer = () => {
         <Link href={`/#contacts`} passHref>
           <div className="flex justify-center items-center flex-col text-[5vw] md:text-[4vw] text-white">
             <AiOutlineMail />
-            <p className="text-[3vw] md:text-[2vw]">Contacts</p>
+            {/* <p className="text-[3vw] md:text-[2vw]">Contacts</p> */}
+            <p className="text-[3vw]">Contacts</p>
           </div>
         </Link>
       </footer>

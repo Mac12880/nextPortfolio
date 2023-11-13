@@ -6,13 +6,7 @@ const LeftContent = () => {
   const MenuItem = ({ title, link, icon }) => {
     return (
       <Link href={`/#${link}`} passHref>
-        <div
-          className="text-white cursor-pointer"
-          style={{
-            fontSize: "2vw",
-            padding: "1vw",
-          }}
-        >
+        <div className="text-white cursor-pointer text-[2vw] p-[1vw]">
           {icon}
         </div>
       </Link>
@@ -20,13 +14,16 @@ const LeftContent = () => {
   };
   return (
     <div
-      className="hidden lg:flex flex-col justify-evenly items-center w-full h-full rounded"
-      style={{ background: "#121212", borderRadius: "1vw" }}
+      className="hidden lg:flex flex-col justify-evenly items-center w-full h-full rounded-[1vw] bg-[#121212]"
+      // style={{ background: "#121212", borderRadius: "1vw" }}
     >
       {content.map((item) => {
         return <MenuItem {...item} key={item.id}></MenuItem>;
       })}
-      <hr style={{ color: "white", width: "80%" }} />
+      <hr
+        className="text-white w-[80%]"
+        // style={{ color: "white", width: "80%" }}
+      />
 
       {socials.map((item) => {
         return (
@@ -38,21 +35,16 @@ const LeftContent = () => {
           >
             {/* default */}
             <span className="hover-button--off">
-              <div
-                className="text-white cursor-pointer"
-                style={{ fontSize: "2vw", padding: "1vw" }}
-              >
+              <div className="text-white cursor-pointer text-[2vw] p-[1vw]">
                 {item.icon}
               </div>
             </span>
             {/* hover */}
             <span className="hover-button--on">
               <div
-                className="cursor-pointer"
+                className="cursor-pointer text-[2vw] p-[1vw]"
                 style={{
                   color: `${item.color}`,
-                  fontSize: "2vw",
-                  padding: "1vw",
                 }}
               >
                 {item.iconhover}

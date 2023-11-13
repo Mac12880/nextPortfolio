@@ -24,7 +24,7 @@ const About = () => {
       <main className="homePage">
         <div className="hero1">
           <div className="hero1Grid flex justify-evenly align-middle">
-            <div className="flex flex-column justify-center">
+            <div className="flex flex-col justify-center">
               <h1>Hi, I&apos;m Marc</h1>
               <h3>A Developer</h3>
             </div>
