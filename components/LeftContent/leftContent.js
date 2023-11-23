@@ -6,7 +6,7 @@ const LeftContent = () => {
   const MenuItem = ({ title, link, icon }) => {
     return (
       <Link href={`/#${link}`} passHref>
-        <div className="text-white cursor-pointer text-[2vw] p-[1vw]">
+        <div className="text-white cursor-pointer text-[2vw] p-[1vw] w-full hover:bg-neutral-950">
           {icon}
         </div>
       </Link>
@@ -42,7 +42,7 @@ const LeftContent = () => {
             {/* hover */}
             <span className="hover-button--on">
               <div
-                className="cursor-pointer text-[2vw] p-[1vw]"
+                className="cursor-pointer text-[2vw] p-[1vw] hover:bg-neutral-950"
                 style={{
                   color: `${item.color}`,
                 }}
