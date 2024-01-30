@@ -29,7 +29,7 @@ const RightHero1 = () => {
           Marc Augustine R. Juan
         </b>
         <p className="w-[100%] h-auto text-white text-justify whitespace-pre-wrap text-[3vw]  xl:text-[1.3vw] pe-0 lg:pe-[1vw] ">
-          I am seeking an opportunity in software development as a front-end web
+          I am seeking an opportunity in software development as a front-end
           developer or full-stack developer, where I can apply my theoretical
           knowledge to real-world projects, enhance my technical skills, and
           gain valuable experience while working in a collaborative team
