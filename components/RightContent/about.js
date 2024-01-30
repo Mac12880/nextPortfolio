@@ -47,10 +47,19 @@ const About = () => {
       </div>
 
       <div className="flex justify-center">
-        <p className="w-[94%] text-white text-[3vw] lg:text-[2vw] text-justify pt-[1vw] pb-[1vw] whitespace-pre-wrap">
+        {/* <p className="w-[94%] text-white text-[3vw] lg:text-[2vw] text-justify pt-[1vw] pb-[1vw] whitespace-pre-wrap">
           Hi, I&apos;m Marc. I have completed my internship and am now embarking
           on my freelance journey as either a front-end web developer or a
           full-stack developer. I&apos;ve already undertaken projects using
+          Next.js and React.js, collaborating with talented individuals to craft
+          digital products for both businesses and consumers. I am confident in
+          my skills and design abilities, naturally curious, and continually
+          refining my technical and design skills.
+        </p> */}
+        <p className="w-[94%] text-white text-[3vw] lg:text-[2vw] text-justify pt-[1vw] pb-[1vw] whitespace-pre-wrap">
+          Hi, I&apos;m Marc. I have completed my internship and now embarking on
+          my journey in either a job or freelance role as a front-end developer
+          or a full-stack developer. I've already completed projects using
           Next.js and React.js, collaborating with talented individuals to craft
           digital products for both businesses and consumers. I am confident in
           my skills and design abilities, naturally curious, and continually
