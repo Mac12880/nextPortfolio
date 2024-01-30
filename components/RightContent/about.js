@@ -59,7 +59,7 @@ const About = () => {
         <p className="w-[94%] text-white text-[3vw] lg:text-[2vw] text-justify pt-[1vw] pb-[1vw] whitespace-pre-wrap">
           Hi, I&apos;m Marc. I have completed my internship and now embarking on
           my journey in either a job or freelance role as a front-end developer
-          or a full-stack developer. I've already completed projects using
+          or a full-stack developer. I&apos;ve already completed projects using
           Next.js and React.js, collaborating with talented individuals to craft
           digital products for both businesses and consumers. I am confident in
           my skills and design abilities, naturally curious, and continually
