@@ -79,7 +79,8 @@ export default function Home() {
                 <Link
                   // Resume
                   // href="/JUAN-StudentResume.pdf"
-                  href="/Juan_Marc-Resume_2.pdf"
+                  // href="/Juan_Marc-Resume_2.pdf"
+                  href="/JuanMarcResume-11-21-2024.pdf"
                   target="_blank"
                   // className="h-[6vh] w-[12vh] px-[1vw] py[0.5vw] lg:h-[70%] lg:w-[10vw] flex justify-center items-center bg-black bg-opacity-80 text-white cursor-pointer rounded-full lg:rounded-full hover:bg-opacity-100"
                   className="h-fit w-fit px-[1.5vw] py-[1.55vw] lg:h-[70%] lg:w-[10vw] flex justify-center items-center bg-black bg-opacity-80 text-white cursor-pointer rounded-full lg:rounded-full hover:bg-opacity-100"
